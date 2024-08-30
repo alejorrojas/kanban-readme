@@ -1,3 +1,22 @@
 {
-  "cSpell.words": ["Kanban"]
+  "cSpell.words": ["Kanban"],
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#dadada",
+    "activityBar.background": "#ffffff",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#b0afaf",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "commandCenter.border": "#15202b99",
+    "sash.hoverBorder": "#ffffff",
+    "statusBar.background": "#ffffff",
+    "statusBar.foreground": "#15202b",
+    "statusBarItem.hoverBackground": "#ffffff",
+    "statusBarItem.remoteBackground": "#ffffff",
+    "statusBarItem.remoteForeground": "#15202b",
+    "titleBar.activeBackground": "#ffffff",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveBackground": "#ffffff",
+    "titleBar.inactiveForeground": "#15202b99"
+  }
 }
