@@ -64,29 +64,6 @@ export function Kanban() {
                 </div>
               </CardFooter>
             </Card>
-            <Card>
-              <CardContent>
-                <h3 className="text-base font-semibold">Do laundry</h3>
-                <p className="text-sm text-muted-foreground">
-                  Tidy up and do laundry by Friday.
-                </p>
-              </CardContent>
-              <CardFooter className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <Avatar className="w-6 h-6 border">
-                    <AvatarImage src="/placeholder-user.jpg" alt="@username" />
-                    <AvatarFallback>CN</AvatarFallback>
-                  </Avatar>
-                  <span className="text-sm text-muted-foreground">
-                    Alejo Rojas
-                  </span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CalendarDaysIcon className="w-4 h-4 text-muted-foreground" />
-                  <span className="text-sm text-muted-foreground">Aug 03</span>
-                </div>
-              </CardFooter>
-            </Card>
           </div>
         </div>
         <div className="bg-card rounded-lg shadow-md">
@@ -119,8 +96,6 @@ export function Kanban() {
                 </div>
               </CardFooter>
             </Card>
-          </div>
-          <div className="p-4 space-y-4">
             <Card>
               <CardContent>
                 <h3 className="text-base font-semibold">
