@@ -45,7 +45,7 @@ export function Kanban() {
                 </h3>
                 <p className="text-sm text-muted-foreground">
                   Participate actively in open source software projects like
-                  NodeJS or Supabse.
+                  Node.js or Supabase.
                 </p>
               </CardContent>
               <CardFooter className="flex items-center justify-between">
