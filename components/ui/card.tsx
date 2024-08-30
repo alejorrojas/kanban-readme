@@ -15,7 +15,7 @@ const Card: FC<CardProps> = ({ className, ...props }) => {
       <div
         ref={nodeRef}
         className={cn(
-          "rounded-lg border bg-card text-card-foreground shadow-sm",
+          "rounded-lg cursor-pointer border bg-card text-card-foreground shadow-sm",
           className
         )}
         {...props}
