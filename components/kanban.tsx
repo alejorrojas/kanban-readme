@@ -103,7 +103,7 @@ export const Kanban = () => {
             <Card>
               <CardContent>
                 <h3 className="text-base font-semibold">
-                  System Engineer Degree
+                  Systems Engineering Degree
                 </h3>
                 <p className="text-sm text-muted-foreground">
                   Halfway through the degree, keep pushing!
@@ -136,7 +136,7 @@ export const Kanban = () => {
               <CardContent>
                 <h3 className="text-base font-semibold">New readme view</h3>
                 <p className="text-sm text-muted-foreground">
-                  Implement an original and hilarious view.
+                  Implement an original and hilarious readme view.
                 </p>
               </CardContent>
               <CardFooter className="flex items-center justify-between">
