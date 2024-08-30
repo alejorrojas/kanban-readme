@@ -23,18 +23,20 @@ import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 
-export function Kanban() {
+export const Kanban = () => {
   return (
     <div className="flex flex-col h-screen bg-background">
-      <header className="flex items-center justify-between px-6 py-4 border-b">
-        <h1 className="text-2xl font-semibold flex gap-7">My readme Kanban</h1>
-        <div className="flex items-center gap-4">
-          <div className="flex justify-center items-center py-4 pr-8 text-sm text-muted-foreground">
+      <header className="flex flex-col md:flex-row items-center justify-between px-4 md:px-6 py-4 border-b">
+        <h1 className="text-xl md:text-2xl font-semibold flex gap-3 md:gap-7">
+          My readme Kanban
+        </h1>
+        <div className="flex items-center gap-4 mt-4 md:mt-0">
+          <div className="flex justify-center items-center py-2 md:py-4 pr-4 md:pr-8 text-sm text-muted-foreground">
             Made with ❤️ by v0
           </div>
         </div>
       </header>
-      <main className="flex-1 grid grid-cols-3 gap-6 p-6">
+      <main className="flex-1 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 p-4 md:p-6">
         <div className="bg-card rounded-lg shadow-md">
           <div className="px-4 py-3 border-b">
             <h2 className="text-lg font-semibold">To Do</h2>
@@ -158,7 +160,7 @@ export function Kanban() {
       </main>
     </div>
   );
-}
+};
 
 function CalendarDaysIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
