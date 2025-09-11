@@ -161,7 +161,7 @@ export const Kanban = () => {
                   Contribute to an open source project
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Create my first PR on an open source project at XMPC (from basement.studio). Here is my <Link className="text-primary" target="_blank" href="https://github.com/basementstudio/xmcp/pull/97">PR</Link>
+                  Create and merge my first PR on an open source project at XMPC (from <Link className="hover:text-primary" target="_blank" href="https://basement.studio">basement.studio</Link>). Here is my <Link className="text-primary" target="_blank" href="https://github.com/basementstudio/xmcp/pull/97">PR</Link>.
                 </p>
               </CardContent>
               <CardFooter className="flex items-center justify-between">
