@@ -22,6 +22,7 @@ To read more about using these font, please visit the Next.js documentation:
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import Link from "next/link";
 
 export const Kanban = () => {
   return (
@@ -45,11 +46,10 @@ export const Kanban = () => {
             <Card>
               <CardContent>
                 <h3 className="text-base font-semibold">
-                  Contribute to open source project
+                  Take an AWS certification exam
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Participate actively in open source software projects like
-                  Node.js or Supabase.
+                  Altough I have experience working with AWS, I would love to complete a thorough certification like the AWS Solutions Architect Associate.
                 </p>
               </CardContent>
               <CardFooter className="flex items-center justify-between">
@@ -64,7 +64,7 @@ export const Kanban = () => {
                 </div>
                 <div className="flex items-center gap-2">
                   <CalendarDaysIcon className="w-4 h-4 text-muted-foreground" />
-                  <span className="text-sm text-muted-foreground">Jan 25</span>
+                  <span className="text-sm text-muted-foreground">Sep 25</span>
                 </div>
               </CardFooter>
             </Card>
@@ -152,6 +152,31 @@ export const Kanban = () => {
                 <div className="flex items-center gap-2">
                   <CalendarDaysIcon className="w-4 h-4 text-muted-foreground" />
                   <span className="text-sm text-muted-foreground">Jun 10</span>
+                </div>
+              </CardFooter>
+            </Card>
+            <Card>
+              <CardContent>
+                <h3 className="text-base font-semibold">
+                  Contribute to an open source project
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Create my first PR on an open source project at XMPC (from basement.studio). Here is my <Link className="text-primary" target="_blank" href="https://github.com/basementstudio/xmcp/pull/97">PR</Link>
+                </p>
+              </CardContent>
+              <CardFooter className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <Avatar className="w-6 h-6 border">
+                    <AvatarImage src="/placeholder-user.jpg" alt="@username" />
+                    <AvatarFallback>CN</AvatarFallback>
+                  </Avatar>
+                  <span className="text-sm text-muted-foreground">
+                    Alejo Rojas
+                  </span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CalendarDaysIcon className="w-4 h-4 text-muted-foreground" />
+                  <span className="text-sm text-muted-foreground">Aug 25</span>
                 </div>
               </CardFooter>
             </Card>
