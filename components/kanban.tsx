@@ -49,7 +49,7 @@ export const Kanban = () => {
                   Take an AWS certification exam
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Altough I have experience working with AWS, I would love to complete a thorough certification like the AWS Solutions Architect Associate.
+                  Although I have experience working with AWS, I would love to complete a tough certification like the AWS Solutions Architect Associate.
                 </p>
               </CardContent>
               <CardFooter className="flex items-center justify-between">
