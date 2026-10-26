@@ -202,7 +202,7 @@ const Column = ({ id, title, children }: { id: ColumnId; title: string; children
   return (
     <section
       ref={ref}
-      className={cn("flex h-[1280px] flex-col border border-[#1a1a1a] bg-white", isDropTarget && "bg-[#f3efe6]")}
+      className={cn("flex h-[780px] flex-col border border-[#1a1a1a] bg-white", isDropTarget && "bg-[#f3efe6]")}
     >
       <h2 className="border-b border-[#1a1a1a] px-4 py-3 text-[14px] font-medium uppercase tracking-[0.16em]">
         {title}
