@@ -6,8 +6,6 @@ import { PointerActivationConstraints, PointerSensor } from "@dnd-kit/dom";
 import { move } from "@dnd-kit/helpers";
 import { DragDropProvider, useDroppable } from "@dnd-kit/react";
 import { useSortable } from "@dnd-kit/react/sortable";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
 type ColumnId = "todo" | "doing" | "done";
@@ -25,7 +23,7 @@ const COLUMNS: { id: ColumnId; title: string }[] = [
 ];
 
 const ExternalLink = ({ href, children }: { href: string; children: ReactNode }) => (
-  <a className="text-primary underline-offset-2 hover:underline" href={href} target="_blank" rel="noreferrer">
+  <a className="underline decoration-[#1a1a1a]/40 underline-offset-[3px] hover:decoration-[#1a1a1a]" href={href} target="_blank" rel="noreferrer">
     {children}
   </a>
 );
@@ -36,7 +34,7 @@ const OPEN_SOURCE = [
     prs: [
       { title: "the new docs site", url: "https://github.com/simpleble/simpleble/pull/439" },
       { title: "MCP server + Agent Skills", url: "https://github.com/simpleble/simpleble/pull/443" },
-      { title: "step-by-step getting started guide", url: "https://github.com/simpleble/simpleble/pull/456" },
+      { title: "step by step getting started guide", url: "https://github.com/simpleble/simpleble/pull/456" },
       { title: "fix scan stop on Windows", url: "https://github.com/simpleble/simpleble/pull/449" },
       { title: "+ 13 more", url: "https://github.com/simpleble/simpleble/pulls?q=is%3Apr+author%3Aalejorrojas" },
     ],
@@ -58,7 +56,7 @@ const OPEN_SOURCE = [
 const INTERPRETABILITY_PROBLEMS = [
   "superposition: one neuron, many unrelated concepts",
   "faithfulness: do explanations reflect what the model actually computes?",
-  "scaling feature discovery to frontier-size models",
+  "scaling feature discovery to frontier size models",
   "evaluating explanations without a human in the loop",
 ];
 
@@ -73,13 +71,25 @@ const TASKS: Record<string, Task> = {
       </p>
     ),
   },
-  aws: {
-    title: "Take an AWS certification exam",
-    date: "Sep 25",
+  "taste-labs": {
+    title: "Join Taste Labs",
+    date: "2026",
     body: (
       <p>
-        Although I have experience working with AWS, I would love to complete a tough certification like the AWS
-        Solutions Architect Associate.
+        Take part in their mission to end AI slop.{" "}
+        <ExternalLink href="https://tastelabs.com/">Taste Labs</ExternalLink> works out how to measure taste, so
+        models and agents make work that feels right. Starting with design.
+      </p>
+    ),
+  },
+  andon: {
+    title: "Long running agents",
+    date: "2026",
+    body: (
+      <p>
+        See how agents hold up on long running work, like running a grocery store, with{" "}
+        <ExternalLink href="https://andonlabs.com/">Andon Labs</ExternalLink>. Their mission is safe AI by deploying
+        and studying it for real: an AI run store, a café and a radio.
       </p>
     ),
   },
@@ -89,12 +99,12 @@ const TASKS: Record<string, Task> = {
     body: (
       <>
         <p>Trying to understand what happens inside LLMs. Problems I care about:</p>
-        <ul className="list-disc space-y-1 pl-4">
+        <ul className="mt-1 space-y-1 border-l border-[#1a1a1a] pl-3">
           {INTERPRETABILITY_PROBLEMS.map((problem) => (
             <li key={problem}>{problem}</li>
           ))}
         </ul>
-        <p>
+        <p className="mt-2">
           Projects: <ExternalLink href="https://nlasmith.com/paper">NLASmith</ExternalLink>, a framework for
           experimenting with Natural Language Autoencoders. More to come.
         </p>
@@ -111,8 +121,8 @@ const TASKS: Record<string, Task> = {
     date: "Jul 25",
     body: (
       <p>
-        Shipped at <ExternalLink href="https://www.rebill.com">Rebill (YC W22)</ExternalLink>: led the SDK behind
-        1-click checkouts and built PCI-compliant infra.
+        Shipped at <ExternalLink href="https://www.rebill.com">Rebill (YC W22)</ExternalLink>: led the SDK behind one
+        click checkouts and built PCI compliant infra.
       </p>
     ),
   },
@@ -120,13 +130,13 @@ const TASKS: Record<string, Task> = {
     title: "Contribute to open source",
     date: "Oct 26",
     body: (
-      <div className="space-y-2.5">
+      <div className="space-y-3">
         {OPEN_SOURCE.map(({ repo, prs }) => (
           <div key={repo}>
             <ExternalLink href={`https://github.com/${repo}`}>
-              <span className="font-medium text-foreground">{repo}</span>
+              <span className="font-medium">{repo}</span>
             </ExternalLink>
-            <ul className="list-disc pl-4">
+            <ul className="mt-0.5">
               {prs.map((pr) => (
                 <li key={pr.url}>
                   <ExternalLink href={pr.url}>{pr.title}</ExternalLink>
@@ -146,7 +156,7 @@ const TASKS: Record<string, Task> = {
 };
 
 const INITIAL_BOARD: Record<ColumnId, string[]> = {
-  todo: ["agents-ui", "aws"],
+  todo: ["agents-ui", "taste-labs", "andon"],
   doing: ["interpretability", "degree"],
   done: ["yc", "open-source", "readme"],
 };
@@ -162,28 +172,19 @@ const TaskCard = ({ id, index, column }: { id: string; index: number; column: Co
   const { ref, isDragging } = useSortable({ id, index, group: column, type: "item", accept: "item" });
 
   return (
-    <Card
+    <article
       ref={ref}
-      className={cn("cursor-grab touch-none select-none active:cursor-grabbing", isDragging && "opacity-60 shadow-lg")}
+      className={cn(
+        "cursor-grab touch-none select-none border border-[#1a1a1a] bg-[#fbfbf8] px-3.5 py-3 active:cursor-grabbing",
+        isDragging && "opacity-40",
+      )}
     >
-      <CardContent>
-        <h3 className="text-base font-semibold">{task.title}</h3>
-        <div className="flex flex-col gap-2 text-sm text-muted-foreground">{task.body}</div>
-      </CardContent>
-      <CardFooter className="flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <Avatar className="w-6 h-6 border">
-            <AvatarImage src="/placeholder-user.jpg" alt="Alejo Rojas" />
-            <AvatarFallback>AR</AvatarFallback>
-          </Avatar>
-          <span className="text-sm text-muted-foreground">Alejo Rojas</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <CalendarDaysIcon className="w-4 h-4 text-muted-foreground" />
-          <span className="text-sm text-muted-foreground">{task.date}</span>
-        </div>
-      </CardFooter>
-    </Card>
+      <div className="flex items-baseline justify-between gap-3">
+        <h3 className="text-[15px] font-medium leading-snug">{task.title}</h3>
+        <time className="shrink-0 text-[11px] tracking-wide text-[#6b6b6b]">{task.date}</time>
+      </div>
+      <div className="mt-1.5 text-[13px] leading-relaxed text-[#242424]">{task.body}</div>
+    </article>
   );
 };
 
@@ -198,12 +199,12 @@ const Column = ({ id, title, children }: { id: ColumnId; title: string; children
   return (
     <section
       ref={ref}
-      className={cn("bg-card rounded-lg shadow-md transition-colors", isDropTarget && "bg-muted")}
+      className={cn("flex h-[860px] flex-col border border-[#1a1a1a] bg-white", isDropTarget && "bg-[#f3efe6]")}
     >
-      <div className="px-4 py-3 border-b">
-        <h2 className="text-lg font-semibold">{title}</h2>
-      </div>
-      <div className="p-4 space-y-4 min-h-24">{children}</div>
+      <h2 className="border-b border-[#1a1a1a] px-4 py-3 text-[12px] font-medium uppercase tracking-[0.16em]">
+        {title}
+      </h2>
+      <div className="flex min-h-0 flex-1 flex-col gap-3 overflow-y-auto p-3">{children}</div>
     </section>
   );
 };
@@ -213,10 +214,9 @@ export const Kanban = () => {
   const snapshot = useRef(board);
 
   return (
-    <div className="flex flex-col min-h-screen bg-background">
-      <header className="flex flex-col md:flex-row items-center justify-between px-4 md:px-6 py-4 border-b">
-        <h1 className="text-xl md:text-2xl font-semibold">My readme Kanban</h1>
-        <span className="mt-2 md:mt-0 text-sm text-muted-foreground">drag the cards between columns</span>
+    <div className="min-h-screen bg-[#f4f1ea] text-[#1a1a1a]">
+      <header className="px-6 py-5">
+        <h1 className="text-[26px] font-medium tracking-tight">My readme Kanban</h1>
       </header>
       <DragDropProvider
         sensors={SENSORS}
@@ -230,7 +230,7 @@ export const Kanban = () => {
           if (event.canceled) setBoard(snapshot.current);
         }}
       >
-        <main className="flex-1 grid grid-cols-1 md:grid-cols-3 items-start gap-4 md:gap-6 p-4 md:p-6">
+        <main className="grid grid-cols-1 items-start gap-5 px-6 pb-8 md:grid-cols-3">
           {COLUMNS.map((column) => (
             <Column key={column.id} id={column.id} title={column.title}>
               {board[column.id].map((taskId, index) => (
@@ -243,31 +243,3 @@ export const Kanban = () => {
     </div>
   );
 };
-
-function CalendarDaysIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M8 2v4" />
-      <path d="M16 2v4" />
-      <rect width="18" height="18" x="3" y="4" rx="2" />
-      <path d="M3 10h18" />
-      <path d="M8 14h.01" />
-      <path d="M12 14h.01" />
-      <path d="M16 14h.01" />
-      <path d="M8 18h.01" />
-      <path d="M12 18h.01" />
-      <path d="M16 18h.01" />
-    </svg>
-  );
-}
