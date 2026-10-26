@@ -54,10 +54,10 @@ const OPEN_SOURCE = [
 ];
 
 const INTERPRETABILITY_PROBLEMS = [
-  "superposition: one neuron, many unrelated concepts",
   "faithfulness: do explanations reflect what the model actually computes?",
   "scaling feature discovery to frontier size models",
   "evaluating explanations without a human in the loop",
+  "interpretability as a tool for alignment",
 ];
 
 const TASKS: Record<string, Task> = {
@@ -72,13 +72,13 @@ const TASKS: Record<string, Task> = {
     ),
   },
   "taste-labs": {
-    title: "Join Taste Labs",
+    title: "How to measure taste",
     date: "2026",
     body: (
       <p>
-        Take part in their mission to end AI slop.{" "}
-        <ExternalLink href="https://tastelabs.com/">Taste Labs</ExternalLink> works out how to measure taste, so
-        models and agents make work that feels right. Starting with design.
+        My own research on tools for measuring taste, so what gets made feels right. Like{" "}
+        <ExternalLink href="https://tastelabs.com/">Taste Labs</ExternalLink>: make taste measurable, starting with
+        design.
       </p>
     ),
   },
@@ -87,9 +87,9 @@ const TASKS: Record<string, Task> = {
     date: "2026",
     body: (
       <p>
-        See how agents hold up on long running work, like running a grocery store, with{" "}
-        <ExternalLink href="https://andonlabs.com/">Andon Labs</ExternalLink>. Their mission is safe AI by deploying
-        and studying it for real: an AI run store, a café and a radio.
+        My own research on how agents behave on long running tasks, like running a grocery store. As{" "}
+        <ExternalLink href="https://andonlabs.com/">Andon Labs</ExternalLink> describes it: study AI in the real world,
+        an AI run store, a café and a radio, so it stays safe.
       </p>
     ),
   },
@@ -99,7 +99,7 @@ const TASKS: Record<string, Task> = {
     body: (
       <>
         <p>Trying to understand what happens inside LLMs. Problems I care about:</p>
-        <ul className="mt-1 space-y-1 border-l border-[#1a1a1a] pl-3">
+        <ul className="mt-1 list-disc space-y-1 pl-4">
           {INTERPRETABILITY_PROBLEMS.map((problem) => (
             <li key={problem}>{problem}</li>
           ))}
@@ -114,7 +114,7 @@ const TASKS: Record<string, Task> = {
   degree: {
     title: "Systems Engineering Degree",
     date: "Dec 26",
-    body: <p>Final stretch at UTN, keep pushing!</p>,
+    body: <p>Finishing my Systems Engineering degree at UTN.</p>,
   },
   yc: {
     title: "Work at a YC company",
