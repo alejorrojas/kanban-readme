@@ -61,16 +61,6 @@ const INTERPRETABILITY_PROBLEMS = [
 ];
 
 const TASKS: Record<string, Task> = {
-  "agents-ui": {
-    title: "Research Agent UIs",
-    date: "2027",
-    body: (
-      <p>
-        Explore how agent interfaces can streamline the development process: better ways to steer, review and ship
-        with AI agents.
-      </p>
-    ),
-  },
   "taste-labs": {
     title: "Measure and convey taste",
     date: "2026",
@@ -89,10 +79,10 @@ const TASKS: Record<string, Task> = {
     date: "2026",
     body: (
       <p>
-        Explore whether models that perform extremely well on small tasks can run a business. That takes long running
-        work, coordination, and a memory of what already happened. As{" "}
-        <ExternalLink href="https://andonlabs.com/">Andon Labs</ExternalLink> describes it: study AI in the real world,
-        an AI run store, a café and a radio, so it stays safe.
+        Models perform extremely well on short term tasks. Can they combine those small tasks and keep them going
+        long enough to run a business? That takes long running work, coordination, and a memory of what already
+        happened. As <ExternalLink href="https://andonlabs.com/">Andon Labs</ExternalLink> describes it: an AI run
+        store, a café and a radio.
       </p>
     ),
   },
@@ -159,7 +149,7 @@ const TASKS: Record<string, Task> = {
 };
 
 const INITIAL_BOARD: Record<ColumnId, string[]> = {
-  todo: ["agents-ui", "taste-labs", "andon"],
+  todo: ["taste-labs", "andon"],
   doing: ["interpretability", "degree"],
   done: ["yc", "open-source", "readme"],
 };
