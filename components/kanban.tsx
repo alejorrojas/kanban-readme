@@ -183,7 +183,7 @@ const TaskCard = ({ id, index, column }: { id: string; index: number; column: Co
       )}
     >
       <div className="flex items-baseline justify-between gap-3">
-        <h3 className="text-[18px] font-medium leading-snug">{task.title}</h3>
+        <h3 className="text-[26px] font-medium leading-snug">{task.title}</h3>
         <time className="shrink-0 text-[13px] tracking-wide text-[#6b6b6b]">{task.date}</time>
       </div>
       <div className="mt-1.5 text-[16px] leading-relaxed text-[#242424]">{task.body}</div>
@@ -202,7 +202,7 @@ const Column = ({ id, title, children }: { id: ColumnId; title: string; children
   return (
     <section
       ref={ref}
-      className={cn("flex h-[780px] flex-col border border-[#1a1a1a] bg-white", isDropTarget && "bg-[#f3efe6]")}
+      className={cn("flex h-[900px] flex-col border border-[#1a1a1a] bg-white", isDropTarget && "bg-[#f3efe6]")}
     >
       <h2 className="border-b border-[#1a1a1a] px-4 py-3 text-[14px] font-medium uppercase tracking-[0.16em]">
         {title}
