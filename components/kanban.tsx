@@ -72,22 +72,25 @@ const TASKS: Record<string, Task> = {
     ),
   },
   "taste-labs": {
-    title: "How to measure taste",
+    title: "Measure and convey taste",
     date: "2026",
     body: (
       <p>
-        My own research on tools for measuring taste, so what gets made feels right. Like{" "}
+        Explore how to measure taste and how to communicate it to an agent. This is hard even for humans. How do we
+        know a painting is good? How do we express what we feel when we see one? Conveying that is already hard
+        between people. How do we get an agent to understand it? Like{" "}
         <ExternalLink href="https://tastelabs.com/">Taste Labs</ExternalLink>: make taste measurable, starting with
         design.
       </p>
     ),
   },
   andon: {
-    title: "Long running agents",
+    title: "Can agents run a business",
     date: "2026",
     body: (
       <p>
-        My own research on how agents behave on long running tasks, like running a grocery store. As{" "}
+        Explore whether models that perform extremely well on small tasks can run a business. That takes long running
+        work, coordination, and a memory of what already happened. As{" "}
         <ExternalLink href="https://andonlabs.com/">Andon Labs</ExternalLink> describes it: study AI in the real world,
         an AI run store, a café and a radio, so it stays safe.
       </p>
@@ -199,7 +202,7 @@ const Column = ({ id, title, children }: { id: ColumnId; title: string; children
   return (
     <section
       ref={ref}
-      className={cn("flex h-[860px] flex-col border border-[#1a1a1a] bg-white", isDropTarget && "bg-[#f3efe6]")}
+      className={cn("flex h-[1040px] flex-col border border-[#1a1a1a] bg-white", isDropTarget && "bg-[#f3efe6]")}
     >
       <h2 className="border-b border-[#1a1a1a] px-4 py-3 text-[12px] font-medium uppercase tracking-[0.16em]">
         {title}
